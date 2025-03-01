@@ -114,7 +114,7 @@ class MJPEGStreamCore(resource.Resource):
 
 
 if __name__ == "__main__":
-    camera_ids = [0, 1]
+    camera_ids = [0, 1, 2]
     stream = MJPEGStreamCore(camera_ids)
     site = server.Site(stream)
     reactor.listenTCP(18080, site)
