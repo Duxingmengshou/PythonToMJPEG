@@ -9,7 +9,7 @@ from Toolkits.ShutdownYOLOLogger import ShutdownYOLOLogger
 ShutdownYOLOLogger()
 
 isUseModel = True
-# isUseModel = False
+isUseModel = False
 
 
 class ImageProcesCore:
@@ -114,7 +114,9 @@ class MJPEGStreamCore(resource.Resource):
 
 
 if __name__ == "__main__":
-    camera_ids = [0, 1, 2]
+    # camera_ids = [0, 1, 2]
+    camera_ids = [0]
+    # camera_ids = ['rtsp://192.168.43.112:8554/live/stream']
     stream = MJPEGStreamCore(camera_ids)
     site = server.Site(stream)
     reactor.listenTCP(18080, site)
